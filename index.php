@@ -11,11 +11,11 @@
     <form class="formulaire" action="upload.php" method="post" enctype="multipart/form-data">
         <h1>EPSILON</h1>
         <p>Plateforme de peer-learning</p>
-        <p> EPSI </p>
+        <p> EPSI Lille  </p>
         <img src="./melvin.jfif" alt="logo" class="jokair">
         <p> Melvin Malagowski </p>
         
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input class="input-upload" type="file" name="fileToUpload" id="fileToUpload">
         <button type="submit" name="submit">Upload File</button>
     </form>
     </div>
