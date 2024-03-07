@@ -1,11 +1,13 @@
+
+
 body {
-    background-color: gainsboro;
+    background: linear-gradient(pink, rgb(231, 110, 245), pink);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
-    
+
 
 }
 
@@ -20,6 +22,11 @@ img.jokair {
     margin: 0 auto;
     display: block;
     border-radius: 50%;
+}
+
+img.jokair:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .container {
