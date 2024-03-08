@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img {
-            max-width: 100%;
-            height: auto;
+
+        .btn-back {
+            background-color: #001848;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
         }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: transparent;
-            background-image: linear-gradient(to top, #fff0 0%, #fff 100%);
-        }
-
-
-
-
     </style>
+   
 </head>
 <body>
+    <div class="container">
+<?php include 'header.php'; ?>
+    <button class="btn-back">
+<a href="index.php">Retour</a> <br>
+</button>
+
+    
 <?php
 session_start(); 
 
@@ -50,16 +53,16 @@ if(isset($_POST["submit"])) {
 }
 
 if (file_exists($target_file)) {
-    echo "Désolé, fichiers déjà existants.";
+    echo "Désolé, fichiers déjà existants.";  // verif pour le fichier deja existant ou pas
     $uploadOk = 0;
 }
 
-if ($_FILES["fileToUpload"]["size"] > 1500000) {
+if ($_FILES["fileToUpload"]["size"] > 1500000) {  // verif pour la taille du fichier
     echo "Désolé, fichiers trop grands.";
     $uploadOk = 0;
 }
 
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" // verif pour le type de fichier
 && $imageFileType != "gif" && $imageFileType != "pdf"  ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
@@ -76,15 +79,17 @@ if ($uploadOk == 0) {
     }
 }
 
-if (isset($_SESSION['uploaded_file']) && file_exists($_SESSION['uploaded_file'])) {
+if (isset($_SESSION['uploaded_file']) && file_exists($_SESSION['uploaded_file'])) {    
     if ($imageFileType == "pdf") {
         echo '<embed src="'.$_SESSION['uploaded_file'].'" type="application/pdf" width="100%" height="600px" />';
     } else {
-        echo '<img src="'.$_SESSION['uploaded_file'].'" alt="Uploaded Image">';
+        echo '<img src="'.$_SESSION['uploaded_file'].'" alt="Uploaded Image" style="max-width:100%;">';
     }
 } else {
     echo 'No file has been uploaded.';
 }
+
 ?>
+</div>
 </body>
 </html>
