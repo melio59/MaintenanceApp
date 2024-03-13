@@ -16,7 +16,7 @@
             <p>EPSI Lille</p>
             <img src="./melvin.jfif" alt="logo" class="jokair">
             <p>Melvin Malagowski</p>    
-            <p>Groupe : Alexis, Bastien</p>
+            <p>Groupe : Telo, Bastien</p>
         </div>
 
     
