@@ -17,7 +17,9 @@
 <form class="formulaire" action="upload.php" method="post" enctype="multipart/form-data">
     <input class="input-upload" type="file" name="fileToUpload" id="fileToUpload">
     <button type="submit" name="submit">Upload File</button>
+    
 </form>
+<a href="./telo/index.php" class="upload-button">Allez sur le projet de Telo</a>
 </div>
 
 </body>
