@@ -13,6 +13,8 @@
             <h2>Télo Thomas</h2>
             <img src="image/melvin.jfif" alt="Photo de Melvin" class="cover-photo">
             <h2>Melvin Malagowski</h2>
+            <p> Note 17/20    </p>
+            <p> Très facile à modifier , code modulable et propre</p>
             <a href="upload_form.php" class="upload-button">Uploader vos fichiers ici</a>
         </div>
         <?php include 'footer.php'; ?>

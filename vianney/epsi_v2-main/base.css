@@ -1,0 +1,45 @@
+html {
+    overflow-y: hidden;
+    color: green;
+} 
+body{
+    height: 100vh;
+    background-size: cover;
+    background-color: #f4f4f4;
+    background: linear-gradient(#2e5bd9, #0f1d13);
+    font-family: "Oxygen", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.mise_en_page {
+    padding-top : 10%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.fond_pour_affichage {
+    background-color: #9d9d9d;
+    border-radius: 5%;
+    padding-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #f4f4f4;
+}
+.photoProfile {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+.bouton_upload {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+.bouton_retour {
+    text-decoration: none;
+    color: #f4f4f4;
+}
