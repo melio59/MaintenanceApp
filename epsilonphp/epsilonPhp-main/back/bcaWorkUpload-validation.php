@@ -44,47 +44,47 @@ if(!is_dir($target_dir)){
   mkdir($target_dir, 0777);
 }
 
-// ici démare la boucle pour un multi upload
+// Boucle pour gérer le téléchargement de plusieurs fichiers
+if(isset($_FILES["fileToUpload"])) {
+    $numFiles = count($_FILES["fileToUpload"]["name"]);
 
-$target_file = $target_dir .'/'. basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    for ($i = 0; $i < $numFiles; $i++) {
+        $target_file = $target_dir .'/'. basename($_FILES["fileToUpload"]["name"][$i]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-if(isset($_POST["submit"])) {
+        // Vérifier si le fichier existe déjà
+        if (file_exists($target_file)) {
+            echo "Désolé, le fichier " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"][$i])) . " existe déjà.";
+            $uploadOk = 0;
+        }
 
-  // Check if file already exists
-  if (file_exists($target_file)) {
-    echo "Désolé, le fichier existe déjà.";
-    $uploadOk = 0;
-  }
+        // Vérifier la taille du fichier
+        if ($_FILES["fileToUpload"]["size"][$i] > 500000) {
+            echo "Désolé, votre fichier " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"][$i])) . " est trop gros";
+            $uploadOk = 0;
+        }
 
-  // Check file size
-  if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Désolé, votre fichier est trop gros";
-    $uploadOk = 0;
-  }
+        // Autoriser certains formats de fichier
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" && $imageFileType != "pdf" && $imageFileType != "ppt" && $imageFileType != "pptx") {
+            echo "Désolé, seuls les fichiers JPG, JPEG, PNG, GIF, PDF, PPT & PPTX sont autorisés.";
+            $uploadOk = 0;
+        }
 
-  // Allow certain file formats
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" && $imageFileType != "pdf" && $imageFileType != "ppt" && $imageFileType != "pptx") {
-    echo "Désolé, seul les JPG, JPEG, PNG, GIF, PDF, PPT & PPTX sont autorisés.";
-    $uploadOk = 0;
-  }
-
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-    echo " Votre fichier n'a pas été uploadé.";
-  // if everything is ok, try to upload file
-  } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été uploadé.";
-    } else {
-      echo "Désolé, il y a eu une erreur durant l'upload.";
+        // Vérifier si $uploadOk est défini sur 0 en cas d'erreur
+        if ($uploadOk == 0) {
+            echo " Votre fichier " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"][$i])) . " n'a pas été uploadé.";
+        // Si tout est OK, essayer de télécharger le fichier
+        } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$i], $target_file)) {
+                echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"][$i])). " a été uploadé.";
+            } else {
+                echo "Désolé, il y a eu une erreur durant l'upload.";
+            }
+        }
     }
-  }
 }
-
-// ici se termine la boucle pour un multi upload
 
 ?>
 

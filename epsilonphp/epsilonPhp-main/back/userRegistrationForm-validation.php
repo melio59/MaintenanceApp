@@ -24,7 +24,7 @@ if(isset($_POST["valid"])){
             $message = '<html>
                             <body>
                                 <p>Bonjour et bienvenue sur Epsilon !</p>
-                                <p>Pour terminer votre inscription, <a href="https://'.$url.'/userRegistrationMailConfirm.php?mail='.$mail.'&token='.$pwd.'">veuillez cliquer ici</a>.</p>
+                                <p>Pour terminer votre inscription, <a href="https://'.$url.'./userRegistrationMailConfirm.php?mail='.$mail.'&token='.$pwd.'">veuillez cliquer ici</a>.</p>
                                 <p>&Agrave; bient&ocirc;t !<br>
                                 Epsilon".</p>
                             </body>

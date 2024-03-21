@@ -21,6 +21,23 @@ echo '<h2>Description du travail</h2><strong>
 echo '<strong>Challenge visé</strong> : '.$$challenge.'<br>';
 echo '<strong>Défi demandé</strong> : <u>'.$work[$_GET['course']][$_GET['challenge']].'</u><br><br>';
 
+// Affichage du listing des fichiers dans le dossier
+$target_dir = $_GET['course'].$_GET['challenge'];
+$files = scandir($target_dir);
+
+echo "<h2>Listing des fichiers dans le dossier '$target_dir'</h2>";
+
+if (count($files) > 2) {
+    echo "<ul>";
+    foreach ($files as $file) {
+        if ($file != '.' && $file != '..') {
+            echo "<li>$file</li>";
+        }
+    }
+    echo "</ul>";
+} else {
+    echo "Aucun fichier trouvé.";
+}
 ?>
 
 <h2>Upload du travail</h2>

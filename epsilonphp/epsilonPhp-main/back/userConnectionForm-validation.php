@@ -46,9 +46,16 @@ else{
 	<title>Espilon</title>
 	<meta name="description" content="Epsilon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="epsilon.css">
+	
+    <link rel="stylesheet" href="epsilon.css?v=1.2">
     <script src="https://kit.fontawesome.com/b30f5d3ef8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../front/style.css">
+    <link rel="stylesheet" href="../front/background.css">
+    <style>
+        
+
+        </style>
+
 </head>
 <body>
 

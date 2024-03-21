@@ -5,8 +5,11 @@
 	<title>Espilon</title>
 	<meta name="description" content="Epsilon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	
 	<link rel="stylesheet" href="epsilon.css">
+    <link rel="stylesheet" href="../front/style.css">
+    <link rel="stylesheet" href="../front/background.css">
+    
 	<link href="assets/css/all.css" rel="stylesheet">
 	<link href="assets/css/fontawesome.css" rel="stylesheet">
 	<link href="assets/css/brands.css" rel="stylesheet">
@@ -16,7 +19,9 @@
 	<script defer src="assets/js/solid.js"></script>
 	<script defer src="assets/js/fontawesome.js"></script>
     <style type="text/css">
-        #retour{float: left;}
+     
+       
+     #retour{float: left;}
         #return>a{color: rgb(70, 114, 70); text-decoration: none;}
         table{margin: auto;}
         td{float: left;}

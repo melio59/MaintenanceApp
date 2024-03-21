@@ -37,7 +37,7 @@ if($isConnected) {
 
 		<section>
 			<h2 id="courses">Badges disponibles</h2>
-			<ul id="badges-list">
+			<ul id="badges">
 				<li><i class="fa fa-graduation-cap"></i> Apprenti</li>
 				<li><i class="fa fa-handshake"></i> Développeur</li>
 				<li><i class="fa fa-hand-holding"></i> Passeur</li>

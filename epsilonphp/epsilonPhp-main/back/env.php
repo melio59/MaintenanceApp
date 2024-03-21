@@ -14,7 +14,7 @@ if(isset($env)){
 } // dev
 else{
     $db = new PDO('mysql:host=localhost;dbname=pictiokrecette;charset=utf8', 'root', '');
-    $url = 'http://localhost/epsilon/back/';
+    $url = 'http://localhost/MaintenanceApp/epsilonphp/epsilonPhp-main/back/';
     // PHP 7.3.8
 
     ini_set('display_errors', 1);
